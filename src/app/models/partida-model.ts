@@ -18,6 +18,8 @@ export class PartidaModel{
   transporte :TransporteModel;
   pais :PaisModel;
 
+
+  
   constructor(){
     this.proveedor = new ProveedorModel();
     this.transporte = new TransporteModel();
