@@ -1,0 +1,7 @@
+<h3>Repo list</h3>
+<ul>
+  <li *ngFor="let item of proveedores" (click)="onSelect(item)">
+    {{item.id}}<span class="badge">{{item.codigo}}</span> {{item.name}}
+  </li>
+</ul>
+

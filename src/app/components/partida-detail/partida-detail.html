@@ -1,0 +1,55 @@
+<div class="container">
+  <h3>Partida detail</h3>
+<form #partidaForm="ngForm"  (ngSubmit)="onSubmit()" >
+  <div class="form-group">
+    <label for="codigo">codigo</label>
+    <input type="text"  class="form-control" [(ngModel)]="partida.codigo" ngControl="codigo" #codigo="ngForm">
+    <div [hidden]="codigo.valid || codigo.pristine" class="alert alert-danger">
+      Codigo is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="proveedor">proveedor</label>
+    <select class="form-control" [(ngModel)]="partida.proveedor.id" ngControl="proveedor" #proveedor="ngForm">
+      <option *ngFor="let item of proveedores" value="{{item.id}}">{{item.name}}</option>
+    </select>
+    <div [hidden]="proveedor.valid || proveedor.pristine" class="alert alert-danger">
+      Proveedor is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="entrega">entrega</label>
+    <input type="text"  class="form-control" [(ngModel)]="partida.entrega" ngControl="entrega" #entrega="ngForm">
+    <div [hidden]="entrega.valid || entrega.pristine" class="alert alert-danger">
+      Proveedor is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fecha">fecha</label>
+    <input type="text"  class="form-control" [(ngModel)]="partida.fecha" ngControl="fecha" #fecha="ngForm">
+    <div [hidden]="fecha.valid || fecha.pristine" class="alert alert-danger">
+      Fecha is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="transporte">transporte</label>
+    <select class="form-control" [(ngModel)]="partida.transporte.codigo" ngControl="transporte" #transporte="ngForm">
+      <option *ngFor="let item of transportes" value="{{item.codigo}}">{{item.name}}</option>
+    </select>
+    <div [hidden]="transporte.valid || transporte.pristine" class="alert alert-danger">
+      transporte is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="pais">pais</label>
+    <select class="form-control" [(ngModel)]="partida.pais.codigo" ngControl="pais" #pais="ngForm">
+      <option *ngFor="let item of paises" value="{{item.codigo}}">{{item.name}}</option>
+    </select>
+    <div [hidden]="pais.valid || pais.pristine" class="alert alert-danger">
+      Proveedor is required
+    </div>
+  </div>
+  <button  class="btn btn-info" (click)="goBack()">Back</button>
+  <button type="submit" class="btn btn-default">Save</button>
+</form>
+</div>

@@ -1,0 +1,91 @@
+.nav-link[_ngcontent-quq-2] {
+  color: #eee !important;
+}
+.jumbotron-fluid[_ngcontent-quq-4] {
+  padding:0;
+}
+header[_ngcontent-quq-4] {
+  margin-top: -15px;
+}
+img[_ngcontent-quq-4]{
+  width:100%;
+  max-width: 100%;
+  height:auto;
+}
+.card-img-top[_ngcontent-quq-4]{
+  width:100%;
+  height:auto;
+}
+
+#site-title[_ngcontent-quq-4] {
+  max-width:150px;
+}
+#size-banner[_ngcontent-quq-4]{
+  height:580px;
+  padding-top:60px;
+}
+header[_ngcontent-quq-4] .display-2[_ngcontent-quq-4] {
+  font-size: 350%;
+  line-height:1;
+  font-weight:300;
+}
+.banner-tag-line[_ngcontent-quq-4] {
+  font-size:150%;
+  line-height:1.4;
+  font-weight:300;
+}
+
+@media (min-width: 48em) {
+  #size-banner[_ngcontent-quq-4]{
+    height:600px;
+    padding-top:150px;
+  }
+  header[_ngcontent-quq-4] .display-2[_ngcontent-quq-4] {
+    font-size: 400%;
+  }
+  .banner-tag-line[_ngcontent-quq-4] {
+    font-size:180%;
+  }
+}
+.btn-banner[_ngcontent-quq-4] {
+  font-weight: 600;
+  color: #002157;
+  border-color: #002157;
+  margin-right: 10px;
+}
+
+
+.parallax[_ngcontent-quq-4] {
+  text-align:center;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment:fixed!important;
+  overflow:hidden;
+}
+
+.parallax-pattern-overlay[_ngcontent-quq-4] {
+  background-color: rgba(255,255,255,0.5);
+}
+
+
+.footer[_ngcontent-quq-4] {
+  background:#363636;
+  margin-top:-30px;
+  position:relative;
+  padding: 0;
+}
+
+.footer[_ngcontent-quq-4] .container[_ngcontent-quq-4] {
+  padding-top: 60px;
+}
+
+.footer[_ngcontent-quq-4] p[_ngcontent-quq-4] {
+  color:#fff;
+  font-size:.9em;
+  line-height:24px;
+  font-weight:300;
+  text-align:center;
+  text-transform:uppercase;
+  margin-top: 50px;
+}

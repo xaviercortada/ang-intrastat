@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Partidas</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>codigo</th>
+        <th>proveedor</th>
+        <th>entrega</th>
+        <th>fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of partidas">
+        <td><span style="cursor:pointer" class="badge" (click)="onSelect(item)">{{item.id}}</span></td>
+        <td>{{item.codigo}}</td>
+        <td>{{item.proveedor.name}}</td>
+        <td>{{item.entrega}}</td>
+        <td>{{item.fecha}}</td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
