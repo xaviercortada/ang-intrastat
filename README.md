@@ -1,2 +1,6 @@
-Angular 2
-INTRASTAT
+INTRASTAT - web client part
+
+
+Angular2
+
+
