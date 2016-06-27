@@ -1,11 +1,9 @@
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {SeedApp} from './app/seed-app';
-import {ProveedorService} from "./app/services/ProveedorService";
-import {Http, HTTP_PROVIDERS} from '@angular/http';
+import {HTTP_PROVIDERS} from '@angular/http';
 import {Configuration} from "./app/app.constants";
-import {PartidaService} from "./app/services/PartidaService";
-import {ResourceService} from "./app/services/ResourceService";
+import {LoginService} from "./app/services/LoginService";
 
 
 // enableProdMode()
@@ -13,5 +11,5 @@ import {ResourceService} from "./app/services/ResourceService";
 
 
 bootstrap(SeedApp, [
-  ROUTER_PROVIDERS, HTTP_PROVIDERS,Configuration,ProveedorService,PartidaService,ResourceService])
+  ROUTER_PROVIDERS, HTTP_PROVIDERS,Configuration,LoginService])
 .catch(err => console.error(err));

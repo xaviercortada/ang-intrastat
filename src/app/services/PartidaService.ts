@@ -20,6 +20,7 @@ export class PartidaService{
     this.headers.append('Accept', 'application/json');
 
   }
+  
 
   public GetAll() :Observable<Response>  {
     let actionUrl :string = this._configuration.ServerWithApiUrl + 'facturas';

@@ -3,8 +3,11 @@
  */
 
 import {Component} from '@angular/core';
-import {Http, Headers} from '@angular/http';
-import {RouteParams, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {AuthModel} from "../../models/auth-model";
+import {Observable} from "rxjs/Observable";
+import 'rxjs/Rx';
+import {Router} from "@angular/router-deprecated";
+import {LoginService} from "../../services/LoginService";
 
 
 //let template = require('./login.html');
@@ -14,13 +17,36 @@ import {RouteParams, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
   selector: 'login',
   templateUrl: 'app/components/login/login.html',
   styleUrls: ['app/components/login/login.css'],
-  directives: [ROUTER_DIRECTIVES]
+  providers: [],
+  directives: []
 })
 export class Login{
-  constructor(public _http :Http){
-    console.log(_http);
+  private accounts :AuthModel[];
+
+  constructor(private _service :LoginService, private _router :Router){
   }
 
-  login(event, usern, password){}
+  public login(email :string, password :string) :any {
+
+    let authModel = new AuthModel(email, password );
+
+    return this._service.Signin(authModel)
+      .subscribe((data : any) => {
+          localStorage.setItem('auth_token', data.authToken);
+
+          this._router.navigate(['Home']);
+
+        },
+          error => console.log(error),
+          () => console.log('Get all account complete'+this.accounts)
+      );
+
+  }
+
+  handleError(error) {
+    console.error(error);
+    return Observable.throw(error.json().error || 'Server error');
+  }
+
 
 }

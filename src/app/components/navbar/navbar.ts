@@ -5,10 +5,11 @@
 import { Component, Output } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { ROUTES, MenuType, RouteInfo} from "../../routes";
+import {LoginService} from "../../services/LoginService";
 
 @Component({
   selector: 'navbar',
-  properties: ['routes'],
+  providers: [],
   templateUrl: 'app/components/navbar/navbar.html',
   styleUrls: ['app/components/navbar/navbar.css'],
   directives: [ROUTER_DIRECTIVES]
@@ -16,7 +17,7 @@ import { ROUTES, MenuType, RouteInfo} from "../../routes";
 export class Navbar {
   public menuItems: RouteInfo[];
 
-  constructor() {
+  constructor(public loginService :LoginService) {
     this.menuItems = ROUTES;
   }
 

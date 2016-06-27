@@ -3,15 +3,13 @@
  */
 import {Component, OnInit} from "@angular/core";
 import {ProveedorService} from "../../services/ProveedorService";
-import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
-import {ProveedorDetail} from "../proveedor-detail/proveedor-detail";
+import {Router} from '@angular/router-deprecated';
 import {ProveedorModel} from "../../models/proveedor-model";
-import {Configuration} from "../../app.constants";
 
 @Component({
   selector: 'proveedor-list',
   templateUrl: 'app/components/proveedor-list/proveedor-list.html',
-  providers: [Configuration]
+  providers: [ProveedorService]
 
 })
 export class ProveedorList implements OnInit {

@@ -11,7 +11,7 @@ import {Configuration} from "../../app.constants";
 @Component({
   selector: 'partida-list',
   templateUrl: 'app/components/partida-list/partida-list.html',
-  providers: [Configuration]
+  providers: [PartidaService]
 
 })
 export class PartidaList implements OnInit {

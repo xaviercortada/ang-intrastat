@@ -19,7 +19,9 @@
   </div>
   <div class="form-group">
     <label for="entrega">entrega</label>
-    <input type="text"  class="form-control" [(ngModel)]="partida.entrega" ngControl="entrega" #entrega="ngForm">
+    <select class="form-control" [(ngModel)]="partida.entrega" ngControl="entrega" #entrega="ngForm">
+      <option *ngFor="let item of entregaOptions" value="{{item.codigo}}">{{item.desc}}</option>
+    </select>
     <div [hidden]="entrega.valid || entrega.pristine" class="alert alert-danger">
       Proveedor is required
     </div>

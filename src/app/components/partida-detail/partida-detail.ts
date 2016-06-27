@@ -11,10 +11,14 @@ import {ProveedorModel} from "../../models/proveedor-model";
 import {TransporteModel} from "../../models/transporte-model";
 import {PaisModel} from "../../models/pais-model";
 import {ResourceService} from "../../services/ResourceService";
+import {EntregaModel} from "../../models/entrega-model";
+import {Http} from '@angular/http';
+import {Observable} from "rxjs/Rx";
 
 @Component({
   selector:"partida-detail",
-  templateUrl:"app/components/partida-detail/partida-detail.html"
+  templateUrl:"app/components/partida-detail/partida-detail.html",
+  providers:[PartidaService,ResourceService,ProveedorService]
 })
 
 export class PartidaDetail implements OnInit{
@@ -22,11 +26,12 @@ export class PartidaDetail implements OnInit{
   public proveedores :ProveedorModel[];
   public transportes :TransporteModel[];
   public paises :PaisModel[];
+  public entregaOptions :EntregaModel[];
 
   @Output() close = new EventEmitter();
 
-  constructor(public _partidaService: PartidaService,public _proveedorService :ProveedorService, 
-              public _resourceService :ResourceService,public _routeParams : RouteParams){
+  constructor(public _partidaService: PartidaService,public _proveedorService :ProveedorService,
+              public _resourceService :ResourceService,public _http :Http, public _routeParams : RouteParams){
     this.partida = new PartidaModel();
   }
 
@@ -53,8 +58,21 @@ export class PartidaDetail implements OnInit{
           error => console.log(error),
           () => console.log('Get all paises complete'));
 
+      this._http.get('app/data/entrega-options.json')
+        .map((res : any) => res.json())
+        .subscribe((data) => {
+          this.entregaOptions = data;
+      });
+
+
       console.log(this.partida);
     }
+  }
+
+
+  handleError(error) {
+    console.error(error);
+    return Observable.throw(error.json().error || 'Server error');
   }
 
 

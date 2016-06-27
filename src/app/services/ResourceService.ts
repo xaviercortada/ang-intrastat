@@ -3,11 +3,13 @@
  */
 
 import {Injectable} from '@angular/core';
-import {Http, Response, Headers} from '@angular/http';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Configuration} from "../app.constants";
 import {Observable} from "rxjs/Observable";
 import 'rxjs/Rx';
 import {PartidaModel} from "../models/partida-model";
+import {EntregaModel} from "../models/entrega-model";
+import {AuthModel} from "../models/auth-model";
 
 @Injectable()
 export class ResourceService{
@@ -42,7 +44,7 @@ export class ResourceService{
       .catch(this.handleError);
 
   }
-
+  
 
   handleError(error) {
     console.error(error);
