@@ -27,11 +27,11 @@ export class Logout{
   }
 
   public logout() {
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('auth-id');
 
     this._service.Logout();
-
-    localStorage.removeItem('auth_token');
-
+    
     this._router.navigate(['Home']);
 
   }

@@ -4,16 +4,19 @@
 import {Component, OnInit} from "@angular/core";
 import {PartidaService} from "../../services/PartidaService";
 import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {ProveedorDetail} from "../proveedor-detail/proveedor-detail";
 import {PartidaModel} from "../../models/partida-model";
+import {Configuration} from "../../app.constants";
+import {MaterialModel} from "../../models/material-model";
 
 @Component({
-  selector: 'partida-list',
-  templateUrl: 'app/components/partida-list/partida-list.html',
+  selector: 'material-list',
+  templateUrl: 'app/components/material-list/material-list.html',
   providers: [PartidaService]
 
 })
-export class PartidaList implements OnInit {
-  public partidas :PartidaModel[];
+export class MaterialList implements OnInit {
+  public partidas :MaterialModel[];
   constructor(private _router: Router, public _service : PartidaService){
 
   }

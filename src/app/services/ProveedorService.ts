@@ -20,11 +20,19 @@ export class ProveedorService{
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Accept', 'application/json');
 
+    let jwt :string = localStorage.getItem('auth_token');
+    let authId :string = localStorage.getItem('auth-id');
+
+    if(jwt != undefined) {
+      this.headers.append('Authorization', 'Bearer ' + jwt);
+      this.headers.append('auth-id', authId );
+    }
+
   }
 
   public GetAll() :Observable<Response>  {
     let actionUrl :string = this._configuration.ServerWithApiUrl + 'proveedores';
-    return this._http.get(actionUrl)
+    return this._http.get(actionUrl,  {headers : this.headers})
       .map(res => {
         console.log(res);
         return res.json();

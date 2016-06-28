@@ -14,10 +14,12 @@ import {ResourceService} from "../../services/ResourceService";
 import {EntregaModel} from "../../models/entrega-model";
 import {Http} from '@angular/http';
 import {Observable} from "rxjs/Rx";
+import {MaterialList} from "../material-list/material-list";
 
 @Component({
   selector:"partida-detail",
   templateUrl:"app/components/partida-detail/partida-detail.html",
+  directives: [MaterialList],
   providers:[PartidaService,ResourceService,ProveedorService]
 })
 

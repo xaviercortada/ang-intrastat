@@ -30,9 +30,13 @@ export class Login{
 
     let authModel = new AuthModel(email, password );
 
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('auth-id');
+    
     return this._service.Signin(authModel)
       .subscribe((data : any) => {
           localStorage.setItem('auth_token', data.authToken);
+          localStorage.setItem('auth-id', data.authId);
 
           this._router.navigate(['Home']);
 
