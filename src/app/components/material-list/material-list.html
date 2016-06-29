@@ -13,7 +13,15 @@
       </tr>
     </thead>
     <tbody>
+    <tr *ngFor="let item of materiales">
+      <td><span style="cursor:pointer" class="badge" (click)="onSelect(item)">{{item.id}}</span></td>
+      <td>{{item.codigo}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.nomenclature.code}}</td>
+      <td>{{item.peso}}</td>
+      <td>{{item.importe}}</td>
+      <td>{{item.unidades}}</td>
+    </tr>
     </tbody>
-
   </table>
 </div>
